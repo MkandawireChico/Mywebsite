@@ -17,7 +17,10 @@
 <body class="cv-page">
   <div class="cv-toolbar">
     <a href="index.html">← Portfolio</a>
-    <button onclick="window.print()">Print / Save as PDF ↓</button>
+    <div class="cv-toolbar-actions">
+      <button type="button" onclick="downloadCV()">Download PDF ↓</button>
+      <button type="button" class="cv-print-button" onclick="window.print()">Print</button>
+    </div>
   </div>
 
   <main class="cv-document">
@@ -148,5 +151,24 @@
 
     <footer>CHICO MKANDAWIRE · BLANTYRE, MALAWI · CHICOMKANDAWIRE0@GMAIL.COM</footer>
   </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-YcsIPGdhPK4+7I0A3aV8C4bV3U9wYv8wJ3f5j5X4q7g4m5q4w7s4m5q4w7s4m5q4w7s4m5q4w7s4m5q4w7s4m5q4w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    function downloadCV() {
+      if (typeof html2pdf === 'undefined') {
+        alert('PDF download could not load. Please check your internet connection and try again.');
+        return;
+      }
+      const element = document.querySelector('.cv-document');
+      const options = {
+        margin: [10, 11, 10, 11],
+        filename: 'Chico_Mkandawire_CV.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2, useCORS: true, backgroundColor: '#ffffff', scrollY: 0 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+        pagebreak: { mode: ['css', 'legacy'], avoid: ['h2', 'h3'] }
+      };
+      html2pdf().set(options).from(element).save();
+    }
+  </script>
 </body>
 </html>
