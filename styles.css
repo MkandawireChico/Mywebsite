@@ -392,7 +392,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--mint-deep);outline-
 @media print{
  .cv-document .cv-projects{break-before:auto;page-break-before:auto;break-inside:auto;page-break-inside:auto}
  .cv-document .cv-projects h3{break-after:avoid;page-break-after:avoid}
- .cv-document .cv-projects ul{break-inside:avoid;page-break-inside:avoid}
+ .cv-document .cv-projects ul{break-inside:auto;page-break-inside:auto}
  .cv-document .cv-project-tools{font-size:8pt}
  .cv-document section{orphans:3;widows:3}
 }
@@ -404,7 +404,21 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--mint-deep);outline-
 .cv-document .cv-skill-grid b{font-size:10px;color:#294b35}
 @media(max-width:760px){.cv-skill-grid{grid-template-columns:1fr;row-gap:7px}}
 @media print{
- .cv-document .cv-skills{break-inside:avoid}
+ .cv-document .cv-skills{break-inside:auto;page-break-inside:auto}
  .cv-skill-grid{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:18px;row-gap:4px}
  .cv-document .cv-skill-grid p,.cv-document .cv-skill-grid b{font-size:8pt;line-height:1.4}
+}
+
+@media print{
+ .cv-document,.cv-document section,.cv-document .cv-projects,.cv-document .cv-skills,
+ .cv-document .cv-projects ul,.cv-document footer{
+  break-before:auto!important;
+  page-break-before:auto!important;
+  break-inside:auto!important;
+  page-break-inside:auto!important;
+ }
+ .cv-document section h2,.cv-document .cv-projects h3{
+  break-after:avoid;
+  page-break-after:avoid;
+ }
 }
