@@ -320,3 +320,17 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--mint-deep);outline-
 .progress-tags span{font:8px var(--mono);letter-spacing:.03em;color:#526b58;background:#edf2eb;padding:7px 9px}
 .progress-note{font:8px var(--mono);letter-spacing:.04em;color:#839087;border-top:1px solid #e6ebe6;padding-top:13px;margin:18px 0 0}
 @media(max-width:700px){.in-progress-section{padding:68px 0}.progress-grid{grid-template-columns:1fr}.progress-card{padding:25px 22px;min-height:0}.progress-card h3{font-size:24px}}
+
+
+/* Quick navigation for faster portfolio discovery */
+.quick-explore{background:#e9eee8;border-bottom:1px solid #dce4dc}
+.quick-explore-inner{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.quick-label{font:500 8px var(--mono);letter-spacing:.14em;color:#6d8274}
+.quick-explore a{font-size:10px;font-weight:700;color:#40564a;padding:10px 0;border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
+.quick-explore a span{color:#719b59;margin-left:7px}
+.quick-explore a:hover{color:#1e3528;border-color:#8ebc70}
+@media(max-width:760px){
+ .quick-explore-inner{justify-content:flex-start;gap:8px 20px;padding-top:15px;padding-bottom:15px}
+ .quick-label{width:100%;margin-bottom:2px}
+ .quick-explore a{font-size:10px}
+}
