@@ -422,3 +422,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--mint-deep);outline-
   page-break-after:avoid;
  }
 }
+
+.cv-toolbar-actions{display:flex;gap:10px;align-items:center}
+.cv-toolbar-actions .cv-print-button{background:#526158}
+@media(max-width:600px){.cv-toolbar{align-items:flex-start;gap:12px;flex-wrap:wrap}.cv-toolbar-actions{flex-wrap:wrap}}
