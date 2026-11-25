@@ -389,7 +389,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--mint-deep);outline-
 .cv-document .cv-project-tools{font-size:10px;color:#607067;margin-top:4px}
 .cv-document .cv-note{font-size:9px;color:#68776e;font-style:italic}
 @media print{
- .cv-document .cv-projects{break-before:page;page-break-before:always}
+ .cv-document .cv-projects{break-before:auto;page-break-before:auto;break-inside:auto;page-break-inside:auto}
  .cv-document .cv-projects h3{break-after:avoid;page-break-after:avoid}
  .cv-document .cv-projects ul{break-inside:avoid;page-break-inside:avoid}
  .cv-document .cv-project-tools{font-size:8pt}
